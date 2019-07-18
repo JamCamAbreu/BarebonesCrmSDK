@@ -1,0 +1,24 @@
+﻿
+
+This is an example of how to generate Early Bound classes for your entities using the CrmSvcUtil.exe located in your SDK folder under SDK\Bin
+Remember, using early bound style is optional, but it does have the benefit of writing code with typed objects and possibly reducing runtime errors
+
+  - In your CRM, locate the correct endpoint URL:
+    1. Go to settings->customizations->Developer Resources
+    2. Grab the 'Organization Service' Endpoint address
+    3. Should look like: http://cobaltdev82/JCATraining/XRMServices/2011/Organization.svc
+
+
+  - Open up Powershell and navigate to SDK\bin
+
+
+  - Your command should be something like:
+
+./CrmSvcUtil.exe /url:http://cobaltdev82/JCATraining/XRMServices/2011/Organization.svc /out:GeneratedEntities.cs /username:cam.abreu@cobalt.net /password:somePassword /namespace:JamCamBarebonesCrm.entities
+
+  - if powershell hangs seemingly forever, just push a key and it should give you something like:
+    "Code written to C:\DynamicsSdk_2015\SDK\Bin\GeneratedEntities.cs."
+
+  - Now in the solution explorer, use "add existing" to add the GeneratedEntities.cs
+
+
